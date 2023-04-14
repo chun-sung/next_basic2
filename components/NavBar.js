@@ -11,7 +11,7 @@ export default function NavBar() {
     return (
         <div className="">
             <div className="bg text-center text-5xl fixed top-0 w-full h-30 pt-2 lg:pt-20 pb-0 ">
-                <Link className="" href='/'><b>SuperStar</b></Link>                
+                <Link className="" href='/'><b>StarMall</b></Link>                
                 <span onClick={() => {
                     setMmenu(!mMenu)
                     }} 
