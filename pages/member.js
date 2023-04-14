@@ -42,7 +42,7 @@ export default function Member() {
     return (
         <div className={"start " + fade}>
         <Seo title='member | SuperStar' />
-        <h1 className="text-2xl"><b>회원가입</b></h1>
+        <h1 className="text-2xl mt-[160px] lg:mt-56"><b>회원가입</b></h1>
         <div className="member">
             <input className="border-2 outline-red-400" onChange={(e)=>{ setUser_id(e.target.value) }} type="text" placeholder="Email or ID" /><br />
             <input className="border-2 outline-red-400" onChange={(e)=>{ setPsword(e.target.value) }} type="password" placeholder="Password" /><br />

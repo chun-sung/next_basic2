@@ -67,7 +67,7 @@ export default function Login() {
     return (
         <div className={"start " + fade}>
         <Seo title="Login | SuperStar" />
-        <h1 className="text-2xl"><b>Login</b></h1>
+        <h1 className="text-2xl mt-[160px] lg:mt-56"><b>Login</b></h1>
         <div className="member">
             <input className="border-2 outline-red-400" onChange={(e)=>{setId(e.target.value)}} type="text" placeholder="Email or ID" /><br />
             <input className="border-2 outline-red-400 outline-" onKeyUp={() => {if(window.event.keyCode==13){loginEnterBtn()}}} onChange={(e)=>{setPw(e.target.value)}}  type="password" placeholder="Password" /><br />

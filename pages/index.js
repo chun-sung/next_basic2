@@ -13,10 +13,17 @@ export default function Home() {
   return (
     <div className={'start ' + fade}>
       <Seo title='Home | SuperStar' />
-      <div className="mainBg mt-9"></div>
-
-
-
+      <div className="mainBg mt-[90px] lg:mt-[133px]"></div>
+      <div className='bg-blue-800 h-96 text-center pt-10'>box</div>
+      <div className='bg-blue-700 h-96 text-center pt-10'>box</div>
+      <div className='bg-blue-600 h-96 text-center pt-10'>box</div>
+      <div className='bg-blue-500 h-96 text-center pt-10'>box</div>
+      <div className='bg-blue-400 h-96 text-center pt-10'>box</div>
+      <div className='bg-blue-300 h-96 text-center pt-10'>box</div>
+      <div className='bg-blue-200 h-96 text-center pt-10'>box</div>
+      <div className='bg-blue-100 h-96 text-center pt-10'>box</div>
+      <div className='bg-blue-50 h-96 text-center pt-10'>box</div>
+21
 
 
 

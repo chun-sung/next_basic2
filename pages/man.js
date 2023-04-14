@@ -15,7 +15,7 @@ export default function Man() {
 
         <div className={"start + " + fade }>
             <Seo title='man | SuperStar' />
-            <h1 className="text-3xl"><b>Man Page</b></h1>
+            <h1 className="text-2xl mt-[160px] lg:mt-56"><b>Man Page</b></h1>
             <style jsx>{`
 
             `}</style>

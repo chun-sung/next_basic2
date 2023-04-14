@@ -10,17 +10,17 @@ export default function NavBar() {
     
     return (
         <div className="">
-            <div className="bg text-center text-5xl fixed top-0 w-full h-30 pt-2 lg:pt-20 pb-0 ">
-                <Link className="" href='/'><b>StarMall</b></Link>                
+            <div className="bg text-5xl fixed top-0 w-full p-2 pt-3 lg:pt-3"> 
+                <Link className="" href='/'><b>SuperStar</b></Link>                
                 <span onClick={() => {
                     setMmenu(!mMenu)
                     }} 
                     className="lg:hidden absolute left-0 bottom-1 h-6 border-2 text-sm px-1 border-slate-300 w-12 bg-slate-600 text-white hover:bg-red-500 hover:cursor-pointer rounded-sm ml-1 ">Menu
                 </span>
-                <div className="bg2  mt-5 lg:mt-32">
+                <div className="bg2 mt-5">
                     <nav className={mMenu === false ? 'start2' : `start2 end2`}>
                         <div className="icon">
-                        <Link onClick={() => { setMmenu(false)}} href={'/'}><Image width={45} height={45} src="/logo512.png" alt="logo"/></Link>
+                        <Link onClick={() => { setMmenu(false)}} href={'/'}><Image width={30} height={30} src="/logo512.png" alt="logo"/></Link>
                         </div>
                         <div>
                             <ul>
@@ -34,7 +34,7 @@ export default function NavBar() {
                             </ul>
                         </div>
                         <div className="logo">
-                            <Link className='p-3 text-white' href="/login" onClick={() => {setMmenu(false)}}>login</Link>
+                            <Link className='p-3 text-red-900' href="/login" onClick={() => {setMmenu(false)}}><b>login</b></Link>
                         </div>
                         <span onClick={()=> {
                         setMmenu(false);
@@ -42,34 +42,30 @@ export default function NavBar() {
                     </nav>
                 </div>
             </div>
-            <hr className="hr border-grey-300 lg:border-hidden lg:mt-72" />
-            <hr className="hr2" />
-
-
-
 
             <style jsx>{`
                 .bg {
                     background-color: #FFE3E7;
+                    text-align: center;
                 }
                 .bg2 {
                     background-color: #5CBAB3;
                 }
 
                 nav {            
-                    font-size: 18px;
+                    font-size: 14px;
                     display: flex;                
                     justify-content: space-between;
                     align-items: center;
-                    width: 1200px;
-                    height: 70px;
+                    width: 1000px;
+                    height: 45px;
                     margin: 0 auto;                
-                    margin-top: 20px;                 
+                    {/* margin-top: 20px;                      */}
                 }                
                 ul li {
                     display: inline-block;
                     padding: 5px;
-                    margin-right: 20px;
+                    margin-right: 5px;
                     {/* border: 1px solid grey; */}
                 }
                 li:hover {
@@ -97,10 +93,10 @@ export default function NavBar() {
 {/* 반응형 */}
 
                 @media (max-width: 1024px) {
-                    .bg {padding-bottom: 36px}
+                    .bg {padding-bottom: 10px}
                     nav {
-                        width: 200px;
-                        height: 320px;
+                        width: 180px;
+                        height: 345px;
                         background-color: #F2CDAC;                        
                         margin: 0;
                         top: 90px;       
@@ -110,19 +106,19 @@ export default function NavBar() {
                         font-size: 14px;
                         cursor: pointer;
                     }
-                    ul { margin-left: 60px;}
+                    ul { margin-left: 20px;}
                     ul li {
-                        margin-top: 5px;
+                        margin-top: 10px;
                     }
                     .logo {
                         position: absolute;
-                        margin-left: 73px;
+                        margin-left: 55px;
                         margin-top: 5px;
                     }
                     .icon { 
                         display: block;
                         width: 50px;
-                        margin-left: 93px;
+                        margin-left: 82px;
                         margin-top: 20px;
                         margin-bottom: 10px;
                     }
@@ -161,8 +157,8 @@ export default function NavBar() {
                         display: block;
                         position: absolute;
                         transform: fade;
-                        left: -42px;
-                        transition: all 0.3s;
+                        left: -10px;
+                        transition: all 0.2s;
                     }
                 }
 

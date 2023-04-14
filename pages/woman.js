@@ -13,7 +13,7 @@ export default function Woman() {
     return (
         <div className={"start " + fade}>
         <Seo title="woman | SuperStar" />
-        <h1 className="text-3xl"><b>Woman Page</b></h1>
+        <h1 className="text-2xl mt-[160px] lg:mt-56"><b>Woman Page</b></h1>
         <style jsx>{`
 
             `}</style>
