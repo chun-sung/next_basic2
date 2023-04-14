@@ -81,7 +81,7 @@ export default function Login() {
 
         <style jsx>{`
         .member {
-            width: 270px;
+            width: 250px;
             margin: 0 auto;
         }   
         .member input {
@@ -90,7 +90,7 @@ export default function Login() {
             margin-bottom: 5px;
         } 
         .btnGroup {            
-            width: 165px;
+            width: 150px;
             margin: 0 auto;
             margin-top: 20px;
         }

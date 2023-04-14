@@ -56,7 +56,7 @@ export default function Member() {
 
         <style jsx>{`
         .member {
-            width: 270px;
+            width: 250px;
             margin: 0 auto;
 
         }   
@@ -66,7 +66,7 @@ export default function Member() {
             margin-bottom: 5px;
         } 
         .btnGroup {            
-            width: 165px;
+            width: 150px;
             margin: 0 auto;
             margin-top: 20px;
         }
