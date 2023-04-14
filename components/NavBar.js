@@ -53,7 +53,7 @@ export default function NavBar() {
                 }
 
                 nav {            
-                    font-size: 14px;
+                    font-size: 16px;
                     display: flex;                
                     justify-content: space-between;
                     align-items: center;
@@ -96,23 +96,23 @@ export default function NavBar() {
                     .bg {padding-bottom: 10px}
                     nav {
                         width: 180px;
-                        height: 345px;
+                        height: 390px;
                         background-color: #F2CDAC;                        
                         margin: 0;
                         top: 90px;       
                         {/* 왜 left: 는 적용이 안될까  */}
                         border: 1px solid rgba(230, 148, 148, 0.4);
                         border-radius: 5px;
-                        font-size: 14px;
+                        font-size: 18px;
                         cursor: pointer;
                     }
-                    ul { margin-left: 20px;}
+                    ul { margin-left: 10px;}
                     ul li {
                         margin-top: 10px;
                     }
                     .logo {
                         position: absolute;
-                        margin-left: 55px;
+                        margin-left: 50px;
                         margin-top: 5px;
                     }
                     .icon { 
