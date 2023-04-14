@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* color 확인 및 CSS  코드 확인 */
+.color {
+    color: rgb(230, 148, 148);
+    cursor: pointer;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body { background: #f7f4f4; position: relative;}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;    
+}
+
+.btn {
+    /* padding: 4px; */
+    margin-right: 5px;
+    width: 70px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: rgb(207, 207, 204);
+}
+.btnGroup {            
+    width: 140px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.btn:hover {
+    background-color:rgb(189, 206, 240) ;
+    /* background-color: rgb(115, 241, 132); */
+}
+
+
+/* 애니메이션 공통 코드 */
+.start {
+    opacity: 0;
+    transform: fade;                        
+    transition: all 0.1s;
+}
+.end {
+    opacity: 1;
+    transform: fade;
+    transition: all 0.1s;
+}   
