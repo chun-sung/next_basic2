@@ -24,13 +24,13 @@ export default function NavBar() {
                         </div>
                         <div>
                             <ul>
-                                <li><Link className='p-3 text-neutral-700' href="/man" onClick={() => { setMmenu(false)}}>남성용품</Link></li>
-                                <li><Link className='p-3 text-neutral-700' href="/woman" onClick={() => { setMmenu(false)}}>여성용품</Link></li>
-                                <li><Link className='p-3 text-neutral-700' href="/life" onClick={() => { setMmenu(false)}} >생활용품</Link></li>
-                                <li><Link className='p-3 text-neutral-700' href="/cart" onClick={() => { setMmenu(false)}}>장바구니</Link></li>
-                                <li><Link className='p-3 text-neutral-700' href="/coupon" onClick={() => { setMmenu(false)}}>쿠폰함</Link></li>
-                                <li><Link className='p-3 text-neutral-700' href="/board" onClick={() => { setMmenu(false)}}>고객게시판</Link></li>
-                                <li><Link className='p-3 text-neutral-700' href="/member" onClick={() => { setMmenu(false)}}>회원가입</Link></li>                
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/man" onClick={() => { setMmenu(false)}}>남성용품</Link></li>
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/woman" onClick={() => { setMmenu(false)}}>여성용품</Link></li>
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/life" onClick={() => { setMmenu(false)}} >생활용품</Link></li>
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/cart" onClick={() => { setMmenu(false)}}>장바구니</Link></li>
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/coupon" onClick={() => { setMmenu(false)}}>쿠폰함</Link></li>
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/board" onClick={() => { setMmenu(false)}}>고객게시판</Link></li>
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/member" onClick={() => { setMmenu(false)}}>회원가입</Link></li>                
                             </ul>
                         </div>
                         <div className="logo">
@@ -69,7 +69,7 @@ export default function NavBar() {
                     {/* border: 1px solid grey; */}
                 }
                 li:hover {
-                    background-color: rgba(0,0,0,0.06);
+                    background-color: rgba(0,0,0,0.4);
                     border-radius: 5px;
                 }                
                 link {
@@ -82,7 +82,7 @@ export default function NavBar() {
                     border-radius: 5px;
                     color: red;
                 }
-                .logo:hover { background: rgba(0,0,0,0.06) }
+                .logo:hover { background: rgba(0,0,0,0.4) }
                 
                 .mobileMenu {
                     position: absolute;
