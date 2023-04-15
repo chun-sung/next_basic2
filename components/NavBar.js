@@ -60,7 +60,6 @@ export default function NavBar() {
                     width: 1000px;
                     height: 45px;
                     margin: 0 auto;                
-                    {/* margin-top: 20px;                      */}
                 }                
                 ul li {
                     display: inline-block;
@@ -105,6 +104,7 @@ export default function NavBar() {
                         border-radius: 5px;
                         font-size: 18px;
                         cursor: pointer;
+
                     }
                     ul { margin-left: 10px;}
                     ul li {
