@@ -1,3 +1,4 @@
+import Main from '@/components/Main';
 import Seo from '@/components/Seo'
 import Image from 'next/image';
 import { useEffect, useState } from 'react'
@@ -41,18 +42,9 @@ export default function Home() {
     <div className={'start ' + fade}>           
       <Seo title='Home | SuperStar' />
       <div className="mainBg mt-[90px] lg:mt-[133px] relative">
-        <Image className='pwa  rounded-full hover:border-[1px] hover:border-red-400 absolute bottom-[10px] right-[10px]' onClick={()=>{installApp()}} src={'/pwaInstalBtn.png'}  width={40} height={35} alt='pwa button' />
+        <Image className='pwa  rounded-full border-[1px] border-zinc-500 hover:border-red-400 absolute bottom-[10px] right-[10px]' onClick={()=>{installApp()}} src={'/pwaInstalBtn.png'}  width={33} height={30} alt='pwa button' />
       </div>
-
-      <div className='bg-blue-50 h-96 text-center pt-10'>box</div>
-      <div className='bg-blue-100 h-96 text-center pt-10'>box</div>
-      <div className='bg-blue-200 h-96 text-center pt-10'>box</div>
-      <div className='bg-blue-300 h-96 text-center pt-10'>box</div>
-      <div className='bg-blue-400 h-96 text-center pt-10'>box</div>
-      <div className='bg-blue-500 h-96 text-center pt-10'>box</div>
-      <div className='bg-blue-600 h-96 text-center pt-10'>box</div>
-      <div className='bg-blue-700 h-96 text-center pt-10'>box</div>
-      <div className='bg-blue-800 h-96 text-center pt-10'>box</div>
+      <Main />
 
 
 
@@ -80,6 +72,12 @@ export default function Home() {
             background-position: center;
         }
         @media (max-width: 1024px) {
+          .mainBg {
+            height: 200px;
+            background-position: 0px 0px;            
+          }
+        }    
+        @media (max-width: 728px) {
           .mainBg {
             height: 200px;
             background-position: -100px 0px;            

@@ -4,6 +4,10 @@ const withPWA = require('next-pwa');
 
 const NextConfig =  {
   reactStrictMode: true,
+  images: {
+    domains: ["www.springstar.shop"]
+  }
+
 };
 
 module.exports = withPlugins(
