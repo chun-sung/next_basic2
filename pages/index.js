@@ -12,11 +12,8 @@ export default function Home() {
   },[])
 
   return (
-    <div className={'start ' + fade}>
-      <Head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
-      </Head>
-      {/* <Seo title='Home | SuperStar' /> */}
+    <div className={'start ' + fade}>           
+      <Seo title='Home | SuperStar' />
       <div className="mainBg mt-[90px] lg:mt-[133px]"></div>
       <div className='bg-blue-800 h-96 text-center pt-10'>box</div>
       <div className='bg-blue-700 h-96 text-center pt-10'>box</div>
