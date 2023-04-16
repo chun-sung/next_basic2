@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <div className={'start ' + fade}>           
       <Seo title='Home | SuperStar' />
-      <div className="mainBg mt-[90px] lg:mt-[133px] relative">
+      <div className="mainBg mt-[84px] lg:mt-[132px] relative">
         <Image className='pwa  rounded-full border-[1px] border-zinc-500 hover:border-red-400 absolute bottom-[10px] right-[10px]' onClick={()=>{installApp()}} src={'/pwaInstalBtn.png'}  width={33} height={30} alt='pwa button' />
       </div>
       <Main shoes={shoes} setShoes={setShoes} />

@@ -10,7 +10,7 @@ export default function NavBar() {
     
     return (
         <div className="">
-            <div className="bg text-5xl fixed top-0 w-full p-2 pt-3 lg:pt-3 sm:md:shadow-inner"> 
+            <div className="bg text-5xl fixed top-0 w-full p-2 pt-3 lg:pt-3 sm:shadow-inner "> 
                 <Link className="" href='/'><b>SuperStar</b></Link>                
                 <span onClick={() => {
                     setMmenu(!mMenu)
