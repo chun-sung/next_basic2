@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 import axios from "axios";
 
-export default function Main() {
+export default function Main({shoes, setShoes}) {
     
-    const [shoes, setShoes] = useState([]);
-    // let [more , setMore] = useState(0)        // 상품 더보기 버튼 초기 값
+      // let [more , setMore] = useState(0)        // 상품 더보기 버튼 초기 값
     
-    useEffect(() =>{
+
+    useEffect(() =>{              
         axios.get('https://www.springstar.shop/shoes/items')
         .then((res)=> {
             setShoes(res.data)
-        })
+        })                                 
     },[])
 
     return ( 
@@ -20,7 +20,7 @@ export default function Main() {
             <div className=''>
                 <div className=' m-auto max-w-[300px] md:max-w-[600px] lg:max-w-[1200px]  flex flex-wrap gap-6 mt-10 mb-0'>
                     {
-                        !shoes && <h4>Loading...</h4>                        
+                        !shoes && <h4>Loading...</h4>
                     }
                     {                        
                         shoes?.map((a, i) => {
