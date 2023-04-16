@@ -12,23 +12,20 @@ export default function Main({shoes, setShoes}) {
         .then((res)=> {
             setShoes(res.data)
         })                                 
-    },[])
+    },[setShoes])
 
     return ( 
         <>
             {/* 신발 상품 표시 */}
             <div className=''>
                 <div className=' m-auto max-w-[300px] md:max-w-[600px] lg:max-w-[1200px]  flex flex-wrap gap-6 mt-10 mb-0'>
-                    {
-                        !shoes && <h4>Loading...</h4>
-                    }
                     {                        
                         shoes?.map((a, i) => {
                             return <Card className="" shoes={shoes} i={i} key={i} />
                         }) 
                     }
                 </div>
-            <button className='block m-auto mt-10 mb-36 bg-red-300 rounded-md p-2 hover:bg-red-500' onClick={()=>{
+            <button className='block m-auto mt-10 mb-36 bg-red-200 rounded-md p-2 hover:bg-red-400 shadow-slate-500 shadow-md hover:text-white' onClick={()=>{
                 // ★ 리덕스 Toolkit 사용하지 않은 상태에서의 state 의 배열 데이터 값 변경
                 // if(more == 0){
                     axios.get('https://www.springstar.shop/shoes/items2')

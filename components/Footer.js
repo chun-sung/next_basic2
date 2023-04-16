@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <>
-        <div className="footer bg-amber-600">
+        <div className="footer">
             2022 SuperStar Portfolio<br />
                 All rights reserved.
         </div>
@@ -13,6 +13,7 @@ export default function Footer() {
                 color: white;
                 width: 100%;
                 text-align: center;
+                background: #6aa54f;
             }
         `}</style>
         </>

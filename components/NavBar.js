@@ -4,33 +4,33 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function NavBar() {
-    const router = useRouter()
 
+    const router = useRouter()
     let [mMenu, setMmenu] = useState(false);
     
     return (
         <div className="">
-            <div className="bg text-5xl fixed top-0 w-full p-2 pt-3 lg:pt-3"> 
+            <div className="bg text-5xl fixed top-0 w-full p-2 pt-3 lg:pt-3 sm:md:shadow-inner"> 
                 <Link className="" href='/'><b>SuperStar</b></Link>                
                 <span onClick={() => {
                     setMmenu(!mMenu)
                     }} 
                     className="lg:hidden absolute left-0 bottom-1 h-6 border-2 text-sm px-1 border-slate-300 w-12 bg-slate-600 text-white hover:bg-red-500 hover:cursor-pointer rounded-sm ml-1 ">Menu
                 </span>
-                <div className="bg2 mt-5">
+                <div className="bg2 mt-5 md:shadow-inner border-[1px] border-green-100 lg:border-green-300 ">
                     <nav className={mMenu === false ? 'start2' : `start2 end2`}>
                         <div className="icon">
                         <Link onClick={() => { setMmenu(false)}} href={'/'}><Image width={30} height={30} src="/logo512.png" alt="logo"/></Link>
                         </div>
                         <div>
                             <ul>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/man" onClick={() => { setMmenu(false)}}>남성용품</Link></li>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/woman" onClick={() => { setMmenu(false)}}>여성용품</Link></li>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/life" onClick={() => { setMmenu(false)}} >생활용품</Link></li>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/cart" onClick={() => { setMmenu(false)}}>장바구니</Link></li>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/coupon" onClick={() => { setMmenu(false)}}>쿠폰함</Link></li>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/board" onClick={() => { setMmenu(false)}}>고객게시판</Link></li>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-200' href="/member" onClick={() => { setMmenu(false)}}>회원가입</Link></li>                
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/man" onClick={() => { setMmenu(false)}}>남성용품</Link></li>
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/woman" onClick={() => { setMmenu(false)}}>여성용품</Link></li>
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/life" onClick={() => { setMmenu(false)}} >생활용품</Link></li>
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/cart" onClick={() => { setMmenu(false)}}>장바구니</Link></li>
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/coupon" onClick={() => { setMmenu(false)}}>쿠폰함</Link></li>
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/board" onClick={() => { setMmenu(false)}}>고객게시판</Link></li>
+                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/member" onClick={() => { setMmenu(false)}}>회원가입</Link></li>                
                             </ul>
                         </div>
                         <div className="logo">
@@ -45,11 +45,12 @@ export default function NavBar() {
 
             <style jsx>{`
                 .bg {
-                    background-color: #FFE3E7;
+                    {/* background-color: #FFE3E7; */}
+                    background-color: white;
                     text-align: center;
                 }
                 .bg2 {
-                    background-color: #5CBAB3;
+                    background-color: #cfffb9;
                 }
 
                 nav {            
@@ -59,7 +60,7 @@ export default function NavBar() {
                     align-items: center;
                     width: 1000px;
                     height: 45px;
-                    margin: 0 auto;                
+                    margin: 0 auto;                                  
                 }                
                 ul li {
                     display: inline-block;
@@ -68,13 +69,13 @@ export default function NavBar() {
                     {/* border: 1px solid grey; */}
                 }
                 li:hover {
-                    background-color: rgba(0,0,0,0.4);
-                    border-radius: 5px;
+                    background-color: rgba(0,0,0,0.08);
+                    border-radius: 5px;                    
                 }                
                 link {
                     padding:10px;
                 }
-                link:hover {color: red;}
+                {/* link:hover {color: red;} */}
                 .logo {       
                     width: 80px;         
                     padding: 5px;
@@ -92,11 +93,14 @@ export default function NavBar() {
 {/* 반응형 */}
 
                 @media (max-width: 1024px) {
-                    .bg {padding-bottom: 10px}
+                    .bg {
+                        padding-bottom: 10px;
+                        background: #cfffb9;
+                        }
                     nav {
                         width: 180px;
                         height: 390px;
-                        background-color: #F2CDAC;                        
+                        background-color: #61eea8;                        
                         margin: 0;
                         top: 90px;       
                         {/* 왜 left: 는 적용이 안될까  */}

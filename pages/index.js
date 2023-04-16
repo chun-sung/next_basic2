@@ -40,20 +40,20 @@ export default function Home() {
   }
 
   // 변경사항이 저장되지 않을 수 있습니다. (새로 고침시 메시지 팝업 뜸)
-    const preventClose = (e) => {
-      e.preventDefault();
-      e.returnValue = "";             //Chrome에서 동작하도록; deprecated
-    };
+  //   const preventClose = (e) => {
+  //     e.preventDefault();
+  //     e.returnValue = "";             //Chrome에서 동작하도록; deprecated
+  //   };
      
-  useEffect(() => {
-    (() => {
-      window.addEventListener("beforeunload", preventClose);
-    })();
+  // useEffect(() => {
+  //   (() => {
+  //     window.addEventListener("beforeunload", preventClose);
+  //   })();
     
-    return () => {
-      window.removeEventListener("beforeunload", preventClose);
-    };
-  },[]);      
+  //   return () => {
+  //     window.removeEventListener("beforeunload", preventClose);
+  //   };
+  // },[]);      
 
   return (
     <div className={'start ' + fade}>           
