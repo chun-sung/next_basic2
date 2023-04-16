@@ -3,8 +3,8 @@
     "name": "SuperStar",
     "start_url": "/",
     "display": "standalone",
-    "theme_color": "#cfffb9",    
-    "background-color": "#cfffb9",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
 
     "icons": [
       {
