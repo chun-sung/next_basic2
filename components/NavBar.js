@@ -100,7 +100,7 @@ export default function NavBar() {
                     nav {
                         width: 180px;
                         height: 390px;
-                        background-color: #61eea8;                        
+                        background-color: #fdf1f1;                        
                         margin: 0;
                         top: 90px;       
                         {/* 왜 left: 는 적용이 안될까  */}
