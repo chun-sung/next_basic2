@@ -44,10 +44,12 @@ export default function Member() {
         <Seo title='member | SuperStar' />
         <h1 className="text-2xl mt-[160px] lg:mt-56"><b>회원가입</b></h1>
         <div className="member">
-            <input className="border-2 outline-red-400" onChange={(e)=>{ setUser_id(e.target.value) }} type="text" placeholder="Email or ID" /><br />
-            <input className="border-2 outline-red-400" onChange={(e)=>{ setPsword(e.target.value) }} type="password" placeholder="Password" /><br />
+            <from>
+            <input className="border-2 outline-red-400" onChange={(e)=>{ setUser_id(e.target.value) }} type="text" autocomplete="new-password" placeholder="Email or ID" /><br />
+            <input className="border-2 outline-red-400" onChange={(e)=>{ setPsword(e.target.value) }} type="password" autocomplete="new-password" placeholder="Password" /><br />
             <input className="border-2 outline-red-400" onChange={(e)=>{ setPsword2(e.target.value) }}  type="password" placeholder="Password Check" /><br />
             <input className="border-2 outline-red-400" onChange={(e)=>{ setNickname(e.target.value) }}  type="text" placeholder="Nick-name" />
+            </from>
         </div>
         <div className="btnGroup">
             <Link href='/' onClick={ajax} className=''><button className="btn">가입</button></Link>

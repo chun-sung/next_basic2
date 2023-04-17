@@ -2,16 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "@/redux/reducers/user"
 
 export default function NavBar() {
 
-    const router = useRouter()
     let [mMenu, setMmenu] = useState(false);
+    const  user = useSelector((state) => state.user)
+
+    const router = useRouter()
+    const dispatch = useDispatch();
     
     return (
         <div className="">
             <div className="bg text-5xl fixed top-0 w-full p-2 pt-3 lg:pt-3 sm:shadow-inner "> 
                 <Link className="" href='/'><b>SuperStar</b></Link>                
+              
                 <span onClick={() => {
                     setMmenu(!mMenu)
                     }} 
@@ -24,18 +30,29 @@ export default function NavBar() {
                         </div>
                         <div>
                             <ul>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/man" onClick={() => { setMmenu(false)}}>남성용품</Link></li>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/woman" onClick={() => { setMmenu(false)}}>여성용품</Link></li>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/life" onClick={() => { setMmenu(false)}} >생활용품</Link></li>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/cart" onClick={() => { setMmenu(false)}}>장바구니</Link></li>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/coupon" onClick={() => { setMmenu(false)}}>쿠폰함</Link></li>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/board" onClick={() => { setMmenu(false)}}>고객게시판</Link></li>
-                                <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/member" onClick={() => { setMmenu(false)}}>회원가입</Link></li>                
+                                <li><Link className='p-2 text-neutral-700 hover:text-zinc-600' href="/man" onClick={() => { setMmenu(false)}}>남성용품</Link></li>
+                                <li><Link className='p-2 text-neutral-700 hover:text-zinc-600' href="/woman" onClick={() => { setMmenu(false)}}>여성용품</Link></li>
+                                <li><Link className='p-2 text-neutral-700 hover:text-zinc-600' href="/life" onClick={() => { setMmenu(false)}} >생활용품</Link></li>
+                                <li><Link className='p-2 text-neutral-700 hover:text-zinc-600' href="/board" onClick={() => { setMmenu(false)}}>고객게시판</Link></li>                                
+                                <li><Link className='p-2 text-neutral-700 hover:text-zinc-600' href="/coupon" onClick={() => { setMmenu(false)}}>쿠폰함</Link></li>
+                                <li><Link className='p-2 text-neutral-700 hover:text-zinc-600' href="/cart" onClick={() => { setMmenu(false)}}>장바구니</Link></li>                        
+                                { !user.nickName 
+                                    ? <li><Link className='p-3 text-neutral-700 hover:text-zinc-600' href="/member" onClick={() => { setMmenu(false)}}>회원가입</Link></li>                
+                                    : null
+                                }
                             </ul>
                         </div>
-                        <div className="logo">
-                            <Link className='p-3 text-red-900' href="/login" onClick={() => {setMmenu(false)}}><b>login</b></Link>
-                        </div>
+
+                        { user.nickName ? <>
+                            <Link className="text-sky-500 text-md  p-1" href='/membership'><b className="hover:bg-pink-100 block p-2 rounded-lg">{user.nickName}</b></Link>
+                            <div className="logo">                                
+                                <p className="cursor-pointer"> <span className="text-sm" onClick={()=>{ confirm('로그아웃 하시겠습니까?') ? dispatch(logout()) : null }}><b className="">로그아웃</b></span></p>                                     
+                            </div> </>
+                            : <div className="logo">                                
+                                <Link className=' text-red-900' href="/login" onClick={() => {setMmenu(false)}}><b>login</b></Link>                                
+                            </div>
+                        }
+
                         <span onClick={()=> {
                         setMmenu(false);
                     }} className="btn-close bg-slate-600 hover:bg-red-500 lg:hidden block pt-0.5">X</span>
@@ -82,7 +99,7 @@ export default function NavBar() {
                     border-radius: 5px;
                     color: red;
                 }
-                .logo:hover { background: rgba(0,0,0,0.4) }
+                .logo:hover { background: rgba(0,0,0,0.08) }
                 
                 .mobileMenu {
                     position: absolute;
@@ -110,22 +127,21 @@ export default function NavBar() {
                         cursor: pointer;
 
                     }
-                    ul { margin-left: 10px;}
+                    ul { margin-left: 12px;}
                     ul li {
                         margin-top: 10px;
                     }
                     .logo {
                         position: absolute;
                         margin-left: 50px;
-                        margin-top: 5px;
                     }
                     .icon { 
                         display: block;
                         width: 50px;
                         margin-left: 82px;
-                        margin-top: 20px;
+                        margin-top: 15px;
                         margin-bottom: 10px;
-                    }
+                    }     
                     .hr {
                         display: none;                        
                     }

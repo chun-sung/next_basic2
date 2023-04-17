@@ -3,21 +3,23 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { login } from "@/redux/reducers/user"
 
 export default function Login() {
 
     let [user_id, setId] = useState('')
     let [password, setPw] = useState('')
-    let router = useRouter();
-
     const [fade, setFade] = useState('');
+    
+    let router = useRouter();
+    let dispatch = useDispatch();
 
     useEffect(() => {
         // window.scrollTo(0,0)           // 최상단 이동 
         setFade('end')
         return () => setFade('')
     },[])
-
 
 
     function ajax(e) {
@@ -29,10 +31,10 @@ export default function Login() {
             
             if (res.data.msg == "성공") {                
                 alert(`로그인 ${res.data.msg}`);
-                // localStorage.setItem('springStar_nick', res.data.nickName);
-                // localStorage.setItem('springStar', res.data.jwttoken);
-                // console.log(res.data)
-                // dispatch(login(res.data))
+                localStorage.setItem('springStar_nick', res.data.nickName);
+                localStorage.setItem('springStar', res.data.jwttoken);
+                console.log(res.data)
+                dispatch(login(res.data))
                 //{msg: '성공', jwttoken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWNrTmFtZ…hciJ9.QM5-0nCExpxWV6S_Lc4XBi90HIABZncOf31rN-SgcmA',
                 // nickName: '춘성', user_id: 'choonsung'}
                 router.push("/");
@@ -51,12 +53,11 @@ export default function Login() {
             
             if (res.data.msg == "성공") {                
                 alert(`로그인 ${res.data.msg}`);
-                // localStorage.setItem('springStar_nick', res.data.nickName);
-                // localStorage.setItem('springStar', res.data.jwttoken);
-                // console.log(res.data)
-                // dispatch(login(res.data))
-                //{msg: '성공', jwttoken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWNrTmFtZ…hciJ9.QM5-0nCExpxWV6S_Lc4XBi90HIABZncOf31rN-SgcmA',
-                // nickName: '춘성', user_id: 'choonsung'}
+                localStorage.setItem('springStar_nick', res.data.nickName);
+                localStorage.setItem('springStar', res.data.jwttoken);
+                console.log(res.data)
+                dispatch(login(res.data))
+                // {msg: '성공', jwttoken: 'eyJhbGciOiJIUzI1N-SgcmA', nickName: '춘성', user_id: 'choonsung'}
                 router.push("/");
             } else {
                 alert(`로그인 ${res.data.msg}`);
@@ -69,8 +70,10 @@ export default function Login() {
         <Seo title="Login | SuperStar" />
         <h1 className="text-2xl mt-[160px] lg:mt-56"><b>Login</b></h1>
         <div className="member">
-            <input className="border-2 outline-red-400" onChange={(e)=>{setId(e.target.value)}} type="text" placeholder="Email or ID" /><br />
-            <input className="border-2 outline-red-400 outline-" onKeyUp={() => {if(window.event.keyCode==13){loginEnterBtn()}}} onChange={(e)=>{setPw(e.target.value)}}  type="password" placeholder="Password" /><br />
+            <form>
+            <input className="border-2 outline-red-400" onChange={(e)=>{setId(e.target.value)}} type="text" autocomplete="new-password" placeholder="Email or ID" /><br />
+            <input className="border-2 outline-red-400 outline-" onKeyUp={() => {if(window.event.keyCode==13){loginEnterBtn()}}} onChange={(e)=>{setPw(e.target.value)}}  type="password" autocomplete="new-password" placeholder="Password" /><br />
+            </form>
         </div>
         <div className="btnGroup">           
             <Link className="" onClick={ajax} href='/'><button className="btn">확인</button></Link>           
